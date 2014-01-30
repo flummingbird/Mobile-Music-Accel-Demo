@@ -9,6 +9,9 @@
 #import "MAGViewController.h"
 
 @interface MAGViewController ()
+@property (weak, nonatomic) IBOutlet UILabel *xLabel;
+@property (weak, nonatomic) IBOutlet UILabel *yLabel;
+@property (weak, nonatomic) IBOutlet UILabel *zLabel;
 
 @end
 
@@ -29,6 +32,24 @@
         NSLog(@"Failed to open patch!");
     }
     enabled = NO;
+    
+    self.motionManager = [[CMMotionManager alloc] init];
+    self.motionManager.accelerometerUpdateInterval  = 1.0/20.0; // Update at 20Hz
+    if (self.motionManager.accelerometerAvailable) {
+        NSLog(@"Accelerometer avaliable");
+        NSOperationQueue *queue = [NSOperationQueue currentQueue];
+        [self.motionManager startAccelerometerUpdatesToQueue:queue
+                                                 withHandler:^(CMAccelerometerData *accelerometerData, NSError *error) {
+                                                CMAcceleration acceleration = accelerometerData.acceleration;
+                                                self.xLabel.text = [NSString stringWithFormat:@"%f", acceleration.x];
+                                                [PdBase sendFloat:acceleration.x toReceiver:@"pitch"];
+                                                self.yLabel.text = [NSString stringWithFormat:@"%f", acceleration.y];
+                                                [PdBase sendFloat:acceleration.y toReceiver:@"vibrato_speed"];
+                                                self.zLabel.text = [NSString stringWithFormat:@"%f", acceleration.z];
+                                                [PdBase sendFloat:acceleration.z toReceiver:@"vibrato_depth"];
+                                            }];
+    }
+
 }
 
 /*

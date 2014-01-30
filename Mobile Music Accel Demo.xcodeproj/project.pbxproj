@@ -28,6 +28,7 @@
 		3715B995162F2FA80026E296 /* mag_template.pd in Resources */ = {isa = PBXBuildFile; fileRef = 3715B994162F2FA80026E296 /* mag_template.pd */; };
 		3715B9A2162F42C70026E296 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3715B9A1162F42C70026E296 /* AudioToolbox.framework */; };
 		3715B9A4162F42CD0026E296 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3715B9A3162F42CD0026E296 /* AVFoundation.framework */; };
+		37661017189A1B2300B6E82B /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37661016189A1B2200B6E82B /* CoreMotion.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +90,7 @@
 		3715B994162F2FA80026E296 /* mag_template.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = mag_template.pd; sourceTree = "<group>"; };
 		3715B9A1162F42C70026E296 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		3715B9A3162F42CD0026E296 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		37661016189A1B2200B6E82B /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +98,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				37661017189A1B2300B6E82B /* CoreMotion.framework in Frameworks */,
 				3715B9A4162F42CD0026E296 /* AVFoundation.framework in Frameworks */,
 				3715B9A2162F42C70026E296 /* AudioToolbox.framework in Frameworks */,
 				3715B993162F2F540026E296 /* libpd-ios.a in Frameworks */,
@@ -144,6 +147,7 @@
 		3715B941162F23330026E296 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				37661016189A1B2200B6E82B /* CoreMotion.framework */,
 				3715B942162F23330026E296 /* UIKit.framework */,
 				3715B944162F23330026E296 /* Foundation.framework */,
 				3715B946162F23330026E296 /* CoreGraphics.framework */,
